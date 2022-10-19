@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Find Empty Extention Attributes in AD"
+title:  "Find Empty Extension Attributes in AD"
 date:   2022-10-19 00:00:00 +0
 categories: PowerShell, ActiveDirectory
 ---
@@ -42,8 +42,8 @@ $report | Format-Table
 
 The result is a list of attributes with number of users where they are defined!
 ```
-ExtensionAttribute   Count
-------------------   -----
+Attribute            Count
+---------            -----
 extensionAttribute1   5091
 extensionAttribute2   4567
 extensionAttribute3   2606
