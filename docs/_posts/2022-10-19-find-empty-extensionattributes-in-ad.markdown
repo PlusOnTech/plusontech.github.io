@@ -10,7 +10,7 @@ They are added automatically when you prepare the AD forest for Exchange and mos
 However, when it is time to add some new information you need to make sure you are not using an attribute you used somewhere else for a different reason.
 The script below searches through all extensionAttributes (or any other attribute if you wish) and counts how many users have the defined.
 
-```PowerShell
+{% highlight PowerShell %}
 $adAttribute = @"
 extensionAttribute1
 extensionAttribute2
@@ -38,7 +38,7 @@ $report = foreach($item in $adAttribute){
 }
 
 $report | Format-Table
-```
+{% endhighlight %}
 
 The result is a list of attributes with number of users where they are defined!
 ```
