@@ -40,8 +40,8 @@ highlighter: rouge
 
 # Markdown Processors
 kramdown:
-  input: GFM
-  auto_ids: true
+  input:              GFM
+  auto_ids:           true
   syntax_highlighter: rouge
 
 # Exclude from processing.
