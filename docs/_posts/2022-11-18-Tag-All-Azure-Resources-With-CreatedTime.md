@@ -4,7 +4,7 @@ title:  "Tag all Azure Resources with Created Time"
 date:   2022-11-18 00:00:00 +0000
 categories: Azure PowerShell Tips
 ---
-Having a tag attached to resource that can tell when it was created can be useful in many situations.
+Having a tag attached to resources that can tell when it was created can be useful in many situations.
 There are policies that can do this at creation time, but what about those pre-existing resources how do we tag them?
 
 The answer is, as usual, PowerShell!, but this time with a little bit of REST API.
