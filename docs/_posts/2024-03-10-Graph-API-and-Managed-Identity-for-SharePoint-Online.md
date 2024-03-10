@@ -30,7 +30,7 @@ The `Sites.Selected` permission does not actually provide any access to SharePoi
 Other permissions such as `Sites.Read.All` will give it access to all sites in the tenant, which is not what we want.
 
 The permissions cannot be granted in the portal, so we will use PowerShell.
-```PowerShell
+
 {% highlight PowerShell %}
 # Graph API permissions to set
 $oPermissions = @(
@@ -55,7 +55,7 @@ foreach($AppRole in $oAppRole)
     New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.id -BodyParameter $params
 }
 {% endhighlight %}
-```
+
 Once the permissions are set, you can verify them in the portal.
 
 ![alt text](/assets/2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/GraphAPISharePointPermissions.png)
@@ -65,7 +65,6 @@ Again, we will use PowerShell this time to the SharePoint site. The possible Pos
 
 These permissions cannot be viewed in SharePoint. So the last command lists all the granted permissions.
 
-```PowerShell
 {% highlight PowerShell %}
 Connect-MgGraph -Scopes Sites.FullControl.All,Sites.Manage.All,SharePointTenantSettings.Read.All,Sites.ReadWrite.All
 
@@ -102,7 +101,6 @@ $selectedProps = @(
 )
 Get-MgSitePermission -SiteId $site.Id  | ForEach-Object {Get-MgSitePermission -SiteId $site.Id  -PermissionId $_.Id} | Select-Object -Property $selectedProps
 {% endhighlight %}
-```
 
 ### 4. Configure the Logic App
 Now that we have the permissions in place, time to configure the Logic App.
