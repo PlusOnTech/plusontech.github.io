@@ -2,7 +2,7 @@
 layout: post
 title:  "Graph API and Managed Identity for SharePoint Online"
 date:   2024-03-10 00:00:00 +0000
-categories: Azure, Graph API
+categories: GraphAPI
 ---
 In this post we will discuss one very secure and efficient way to access SharePoint Online using Graph API, and that is by using Managed Identity.
 
