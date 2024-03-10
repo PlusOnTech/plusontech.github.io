@@ -18,11 +18,11 @@ For this example we use a consumption plan Logic App, but you can use any other 
 
 * Make sure to enable System assigned managed identity for the Logic App.
 
-    ![alt text](2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/SystemAssignedLogicApp.png)
+    ![alt text](/assets/2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/SystemAssignedLogicApp.png)
 
 * Locate the Logic App in Entra under Enterprise Applications and note its Application ID.
 
-    ![alt text](2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/LogicAppMSIinEntra.png)
+    ![alt text](/assets/2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/LogicAppMSIinEntra.png)
 
 ### 2. Assign Graph API Permission to the Logic App
 To make sure the MSI can only access the SharePoint sites we target, we will assign it the `Sites.Selected` permission.
@@ -56,7 +56,7 @@ foreach($AppRole in $oAppRole)
 ```
 Once the permissions are set, you can verify them in the portal.
 
-![alt text](2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/GraphAPISharePointPermissions.png)
+![alt text](/assets/2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/GraphAPISharePointPermissions.png)
 
 ### 3. Assign SharePoint Online permissions to the MSI
 Again, we will use PowerShell this time to the SharePoint site. The possible Possible [permissions](https://learn.microsoft.com/en-us/graph/api/resources/permission?view=graph-rest-1.0#roles-property-values) are: read, write, owner. Note that we use the client (Application) ID (not Object Id)
@@ -109,9 +109,9 @@ Here is what we are doing in details,
 * We are downloading a file under:  `https://contoso.sharepoint.com/:t:/r/sites/TestLogicApp/Shared Documents/TestUploadFile.txt`
 * To download the file, we use the  [driveitem resource](https://learn.microsoft.com/en-us/graph/api/driveitem-get)
 
-    ![alt text](2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/LogicAppGraphAPIMSIHTTPAction.png)
+    ![alt text](/assets/2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/LogicAppGraphAPIMSIHTTPAction.png)
 * The drive item returns a redirect URL as HTTP 302, so we parse the output then follow the redirect to download the file.
-    ![alt text](2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/FullLogicApp.png)
+    ![alt text](/assets/2024-03-10-Graph-API-and-Managed-Identity-for-SharePoint-Online/images/FullLogicApp.png)
 
 
 Thats it! We have successfully used Managed Identity to access SharePoint Online using Graph API.
