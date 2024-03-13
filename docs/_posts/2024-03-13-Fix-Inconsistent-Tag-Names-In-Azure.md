@@ -59,7 +59,7 @@ $report = foreach ($resource in $result) {
         $reportEntry['ErrorMessage'] = "Resource has multiple bad tags: {0}" -f ($badTag -join ", ")
     }
     else {
-        # Only for resources with 1 bag tag
+        # Only for resources with 1 bad tag
         $tagValue = $resource.tags.$badTag
         $tags = $resource.tags | ConvertTo-PSFHashtable
         $tags[$GoodTagName] = $tagValue
